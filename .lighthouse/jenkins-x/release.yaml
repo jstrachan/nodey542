@@ -56,12 +56,12 @@ spec:
           script: |
             #!/bin/sh
             CI=true DISPLAY=:99 npm test
-        - image: gcr.io/jenkins-x-labs-bdd/mink/mink:v20201121-local-d4b0e10e-dirty@sha256:f95d488e1436ecc4bee3dbe59ba2e783e2e367791f1f41201cc9046a88623a32
+        - image: gcr.io/jenkinsxio/jx-mink:0.0.4
           name: build-container-build
           script: |
             #!/bin/sh
             source /workspace/source/.jx/variables.sh
-            /ko-app/mink resolve -O . --git-url $REPO_URL --kaniko-args "$KANIKO_FLAGS"
+            jx-mink resolve
         - image: gcr.io/jenkinsxio/builder-go
           name: tag-version
           resources: {}
