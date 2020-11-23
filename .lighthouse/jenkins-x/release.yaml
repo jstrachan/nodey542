@@ -56,12 +56,8 @@ spec:
           script: |
             #!/bin/sh
             CI=true DISPLAY=:99 npm test
-        - image: gcr.io/jenkinsxio/jx-mink:0.0.6
+        - image: gcr.io/jenkinsxio/jx-mink:0.0.7
           name: build-container-build
-          script: |
-            #!/bin/sh
-            source /workspace/source/.jx/variables.sh
-            jx-mink resolve
         - image: gcr.io/jenkinsxio/builder-go
           name: tag-version
           resources: {}
