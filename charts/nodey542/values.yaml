@@ -6,7 +6,6 @@ image:
   repository: draft
   tag: dev
   pullPolicy: IfNotPresent
-  fullName: dockerfile:///
 # optional list of image pull secrets to use to pull images
 jx:
   imagePullSecrets: []
