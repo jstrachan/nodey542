@@ -19,7 +19,7 @@ spec:
               memory: 512Mi
           workingDir: /workspace/source
         steps:
-        - image: gcr.io/jenkinsxio/jx-boot:3.0.738
+        - image: gcr.io/jenkinsxio/jx-boot:3.0.752
           name: jx-variables
           resources: {}
           script: |
@@ -48,11 +48,7 @@ spec:
           script: |
             #!/bin/sh
             source /workspace/source/.jx/variables.sh
-            export MINK_AS="tekton-bot"
-            export MINK_GIT_URL=$REPO_URL
-            export MINK_IMAGE=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION
-            export MINK_KANIKO_ARGS=$KANIKO_FLAGS
-            /ko-app/mink resolve -O .
+            /ko-app/mink resolve -O . --git-url $REPO_URL --kaniko-args "$KANIKO_FLAGS"
         - image: gcr.io/jenkinsxio/jx-preview:0.0.122
           name: promote-jx-preview
           resources: {}
