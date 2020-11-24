@@ -58,6 +58,9 @@ spec:
             CI=true DISPLAY=:99 npm test
         - image: gcr.io/jenkinsxio/jx-mink:0.0.33
           name: build-container-build
+          env:
+          - name: HOME
+            value: /tekton/home
         - image: gcr.io/jenkinsxio/builder-go
           name: tag-version
           resources: {}
