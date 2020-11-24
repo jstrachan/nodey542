@@ -56,14 +56,11 @@ spec:
           script: |
             #!/bin/sh
             CI=true DISPLAY=:99 npm test
-        - image: gcr.io/jenkinsxio/jx-mink:0.0.30
+        - image: gcr.io/jenkinsxio/jx-mink:0.0.32
           name: build-container-build
-          command:
-            - jx-mink
-            - resolve
           env:
           - name: MINK_LOCAL_KANIKO
-            value: true
+            value: "true"
         - image: gcr.io/jenkinsxio/builder-go
           name: tag-version
           resources: {}
