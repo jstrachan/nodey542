@@ -1,0 +1,1 @@
+export MINK_HOME=/kaniko
