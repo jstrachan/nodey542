@@ -60,7 +60,7 @@ spec:
           name: build-container-build
           env:
           - name: MINK_LOCAL_KANIKO
-            value: "true"
+            value: "yes"
         - image: gcr.io/jenkinsxio/builder-go
           name: tag-version
           resources: {}
