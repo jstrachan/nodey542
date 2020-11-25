@@ -56,12 +56,12 @@ spec:
           script: |
             #!/bin/sh
             CI=true DISPLAY=:99 npm test
-        - image: gcr.io/jenkinsxio/jx-mink:0.19.4
+        - image: gcr.io/jenkinsxio/jx-mink:0.19.8
           name: build-container-build
           script: |
             #!/busybox/sh
             source .jx/variables.sh
-            jx-mink step --git-url $REPO_URL
+            jx-mink step
         - image: gcr.io/jenkinsxio/builder-go
           name: tag-version
           resources: {}
