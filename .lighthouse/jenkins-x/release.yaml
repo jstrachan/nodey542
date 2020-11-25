@@ -61,7 +61,7 @@ spec:
           script: |
             #!/busybox/sh
             source .jx/variables.sh
-            jx-mink step
+            jx-mink step --git-url $REPO_URL
         - image: gcr.io/jenkinsxio/builder-go
           name: tag-version
           resources: {}
