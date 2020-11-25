@@ -54,12 +54,12 @@ spec:
           name: build-npm-test
           resources: {}
           script: |
-            #!/busybox/sh
+            #!/bin/sh
             CI=true DISPLAY=:99 npm test
         - image: gcr.io/jenkinsxio/jx-mink:0.19.4
           name: build-container-build
           script: |
-            #!/usr/bin/env bash
+            #!/busybox/sh
             source .jx/variables.sh
             jx mink step
         - image: gcr.io/jenkinsxio/builder-go
