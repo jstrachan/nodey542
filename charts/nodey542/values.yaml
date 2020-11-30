@@ -6,7 +6,7 @@ image:
   repository: gcr.io/jenkins-x-labs-bdd/nodey542
   tag: 2.0.1309
   pullPolicy: IfNotPresent
-  fullName: dockerfile:///
+  fullName: gcr.io/jenkins-x-labs-bdd/nodey542:2.0.1309@sha256:42c7d20c465bc8660c76a6b5a7dba16b4cb62ba3c66d2d7d8cce3e1af753d193
 # optional list of image pull secrets to use to pull images
 jx:
   imagePullSecrets: []
